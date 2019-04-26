@@ -28,16 +28,19 @@ public class Computer {
         maxRAM(randomAccessMemory);
         minHDD(hardDriveMemory);
     }
-    private static void maxRAM(int randomAccessMemory){
-        if(maxRandomAccessMemory < randomAccessMemory){
+
+    private static void maxRAM(int randomAccessMemory) {
+        if (maxRandomAccessMemory < randomAccessMemory) {
             maxRandomAccessMemory = randomAccessMemory;
         }
     }
-    private static void minHDD(int hardDriveMemory){
-        if(minHardDriveMemory > hardDriveMemory){
+
+    private static void minHDD(int hardDriveMemory) {
+        if (minHardDriveMemory > hardDriveMemory) {
             minHardDriveMemory = hardDriveMemory;
         }
     }
+
     public Computer() {
 
     }
@@ -129,9 +132,10 @@ public class Computer {
             out.println(messageTemplateBreakAlready);
         }
     }
+
     //вывод строки с перегрузкой
     public String toString() {
-        return processor + " " + randomAccessMemory + "\t" + hardDriveMemory + "\t"+fullCycleWork;
+        return String.format("%s %d\t%d\t%d", processor, randomAccessMemory, hardDriveMemory, fullCycleWork);
     }
 
 
@@ -139,20 +143,21 @@ public class Computer {
 
         out.println(MessageFormat.format("----List of computers that their random Access Memory = {0} ----", maxRandomAccessMemory));
 
-        Map<Boolean, List<Computer>> StudentListByValue = computerList.stream()
+        Map<Boolean, List<Computer>> ComputerListByValue = computerList.stream()
                 .collect(Collectors.partitioningBy(s -> s.getRandomAccessMemory() == maxRandomAccessMemory));
 
-        StudentListByValue.forEach((k, v) -> out.println("Key:" + k + "\n\t" +
+        ComputerListByValue.forEach((k, v) -> out.println("Key:" + k + "\n\t" +
                 v.stream().map(Computer::toString).collect(Collectors.joining(" \n\t"))));
     }
+
     static void minHardDriveMemory(List<Computer> computerList) {
 
         out.println(MessageFormat.format("----List of computers that their Hard Drive Memory = {0} ----", minHardDriveMemory));
 
-        Map<Boolean, List<Computer>> StudentListByValue = computerList.stream()
+        Map<Boolean, List<Computer>> ComputerListByValue = computerList.stream()
                 .collect(Collectors.partitioningBy(s -> s.getHardDriveMemory() == minHardDriveMemory));
 
-        StudentListByValue.forEach((k, v) -> out.println("Key:" + k + "\n\t" +
+        ComputerListByValue.forEach((k, v) -> out.println("Key:" + k + "\n\t" +
                 v.stream().map(Computer::toString).collect(Collectors.joining(" \n\t"))));
     }
 }
