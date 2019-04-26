@@ -1,4 +1,4 @@
-package ClassWork.Polimorth.DrawFigures;
+package ClassWork.Polymorphism.DrawFigures;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package ClassWork.Polimorth.Engines;
+package ClassWork.Polymorphism.Engines;
 
 import static java.lang.System.out;
 

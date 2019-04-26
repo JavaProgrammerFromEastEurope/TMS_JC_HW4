@@ -1,4 +1,4 @@
-package ClassWork.Polimorth.DrawFigures;
+package ClassWork.Polymorphism.DrawFigures;
 
 import static java.lang.System.out;
 

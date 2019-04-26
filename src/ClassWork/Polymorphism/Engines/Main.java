@@ -1,4 +1,4 @@
-package ClassWork.Polimorth.Engines;
+package ClassWork.Polymorphism.Engines;
 
 public class Main {
     public static void main(String[] args) {

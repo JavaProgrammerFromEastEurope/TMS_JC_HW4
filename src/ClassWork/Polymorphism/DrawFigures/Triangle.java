@@ -1,4 +1,4 @@
-package ClassWork.Polimorth.DrawFigures;
+package ClassWork.Polymorphism.DrawFigures;
 
 public class Triangle implements  Drawable {
     @Override
