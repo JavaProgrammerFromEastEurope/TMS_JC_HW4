@@ -10,7 +10,7 @@ public class Application {
     private Scanner scanner = new Scanner(in);
 
     void start() {
-        out.println("добро пожаловать!");
+        out.println("Добро пожаловать!");
         run();
         out.println("Всего доброго!");
     }

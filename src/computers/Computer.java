@@ -12,7 +12,6 @@ import static java.lang.System.out;
 
 public class Computer {
 
-
     private String processor;
     private int randomAccessMemory;
     private int hardDriveMemory;
@@ -136,7 +135,6 @@ public class Computer {
         }
     }
 
-    //вывод строки с перегрузкой
     public String toString() {
         return String.format("%s %d\t%d\t%d", processor, randomAccessMemory, hardDriveMemory, fullCycleWork);
     }
@@ -144,7 +142,7 @@ public class Computer {
 
     static void maxRandomAccessMemory(List<Computer> computerList) {
 
-        out.println(MessageFormat.format("----List of computers that their random Access Memory = {0} ----", maxRandomAccessMemory));
+        out.println(MessageFormat.format("---- List of computers that their Random Access Memory = {0} ----", maxRandomAccessMemory));
 
         Map<Boolean, List<Computer>> ComputerListByValue = computerList.stream()
                 .collect(Collectors.partitioningBy(s -> s.getRandomAccessMemory() == maxRandomAccessMemory));
@@ -155,7 +153,7 @@ public class Computer {
 
     static void minHardDriveMemory(List<Computer> computerList) {
 
-        out.println(MessageFormat.format("----List of computers that their Hard Drive Memory = {0} ----", minHardDriveMemory));
+        out.println(MessageFormat.format("---- List of computers that their Hard Drive Memory = {0} ----", minHardDriveMemory));
 
         Map<Boolean, List<Computer>> ComputerListByValue = computerList.stream()
                 .collect(Collectors.partitioningBy(s -> s.getHardDriveMemory() == minHardDriveMemory));

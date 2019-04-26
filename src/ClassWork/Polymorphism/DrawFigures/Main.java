@@ -6,10 +6,9 @@ public class Main {
         MyInterface a = new MyInterface() {
             @Override
             public void a() {
-
             }
-
         };
+
 
         Application application = new Application();
         application.start();
