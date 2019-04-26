@@ -1,11 +1,14 @@
 package computers;
 
 import java.text.MessageFormat;
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
-import static java.lang.Math.*;
-import static java.lang.System.*;
+import static java.lang.System.in;
+import static java.lang.System.out;
 
 public class Computer {
 
@@ -79,7 +82,7 @@ public class Computer {
 
     public void on() {
 
-        if (abs(fullCycleWork) > 0) {
+        if (fullCycleWork > 0) {
             if (!state) {
                 Random random = new Random();
                 int temp = random.nextInt(2);

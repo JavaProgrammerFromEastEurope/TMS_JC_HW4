@@ -1,6 +1,6 @@
 package ClassWork.Polimorth.Engines;
 
-import static java.lang.System.*;
+import static java.lang.System.out;
 
 public class GasEngine extends Engine{
 

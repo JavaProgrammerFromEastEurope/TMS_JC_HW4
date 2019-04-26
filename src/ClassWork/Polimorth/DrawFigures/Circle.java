@@ -1,6 +1,6 @@
 package ClassWork.Polimorth.DrawFigures;
 
-import static java.lang.System.*;
+import static java.lang.System.out;
 
 public class Circle implements Drawable {
 
