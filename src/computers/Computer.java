@@ -149,7 +149,7 @@ public class Computer {
         Map<Boolean, List<Computer>> ComputerListByValue = computerList.stream()
                 .collect(Collectors.partitioningBy(s -> s.getRandomAccessMemory() == maxRandomAccessMemory));
 
-        ComputerListByValue.forEach((k, v) -> out.println("Key:" + k + "\n\t" +
+        ComputerListByValue.forEach((k, v) -> out.printf("Key: %s\n\t%s%n", k,
                 v.stream().map(Computer::toString).collect(Collectors.joining(" \n\t"))));
     }
 
@@ -160,7 +160,7 @@ public class Computer {
         Map<Boolean, List<Computer>> ComputerListByValue = computerList.stream()
                 .collect(Collectors.partitioningBy(s -> s.getHardDriveMemory() == minHardDriveMemory));
 
-        ComputerListByValue.forEach((k, v) -> out.println("Key:" + k + "\n\t" +
+        ComputerListByValue.forEach((k, v) -> out.printf("Key: %s\n\t%s%n", k,
                 v.stream().map(Computer::toString).collect(Collectors.joining(" \n\t"))));
     }
 }
