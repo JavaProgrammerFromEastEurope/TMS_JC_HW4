@@ -1,4 +1,4 @@
-package ClassWork.Polimorth.newPackage;
+package ClassWork.Polimorth.DrawFigures;
 
 import java.util.Scanner;
 
