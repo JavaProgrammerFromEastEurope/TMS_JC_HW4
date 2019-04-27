@@ -144,10 +144,10 @@ public class Computer {
 
         out.println(MessageFormat.format("---- List of computers that their Random Access Memory = {0} ----", maxRandomAccessMemory));
 
-        Map<Boolean, List<Computer>> ComputerListByValue = computerList.stream()
+        Map<Boolean, List<Computer>> computerListByValue = computerList.stream()
                 .collect(Collectors.partitioningBy(s -> s.getRandomAccessMemory() == maxRandomAccessMemory));
 
-        ComputerListByValue.forEach((k, v) -> out.printf("Key: %s\n\t%s%n", k,
+        computerListByValue.forEach((k, v) -> out.printf("Key: %s\n\t%s%n", k,
                 v.stream().map(Computer::toString).collect(Collectors.joining(" \n\t"))));
     }
 
@@ -155,10 +155,10 @@ public class Computer {
 
         out.println(MessageFormat.format("---- List of computers that their Hard Drive Memory = {0} ----", minHardDriveMemory));
 
-        Map<Boolean, List<Computer>> ComputerListByValue = computerList.stream()
+        Map<Boolean, List<Computer>> computerListByValue = computerList.stream()
                 .collect(Collectors.partitioningBy(s -> s.getHardDriveMemory() == minHardDriveMemory));
 
-        ComputerListByValue.forEach((k, v) -> out.printf("Key: %s\n\t%s%n", k,
+        computerListByValue.forEach((k, v) -> out.printf("Key: %s\n\t%s%n", k,
                 v.stream().map(Computer::toString).collect(Collectors.joining(" \n\t"))));
     }
 }
