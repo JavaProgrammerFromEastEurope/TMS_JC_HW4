@@ -74,10 +74,10 @@ public class Calculator {
         }
     }
 
-    private static int initialize() {
+    private static double initialize() {
         while (true) {
-            if (scanner.hasNextInt()) {
-                return scanner.nextInt();
+            if (scanner.hasNextDouble()) {
+                return scanner.nextDouble();
             } else {
                 out.println(String.format("%s %s", scanner.next(), messageTemplate));
             }
