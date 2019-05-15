@@ -6,6 +6,8 @@ public class Calculator {
 
     final private static String messageTemplateFirst = "Input first number:";
     final private static String messageTemplateSecond = "Input second number:";
+    private double firstInput;
+    private double secondInput;
 
     void start() {
         out.println("Welcome!");
@@ -24,41 +26,25 @@ public class Calculator {
         }
     }
 
-    private IFunctionF getUserChoice() throws StopApplicationException{
+    private IFunctionF getUserChoice() throws StopApplicationException {
         showMenu();
         int number = Input.getInt();
-        double firstInput;
-        double secondInput;
+
         switch (number) {
             case 1:
-                out.println(messageTemplateFirst);
-                firstInput = Input.getDouble();
-                out.println(messageTemplateSecond);
-                secondInput = Input.getDouble();
+                initialize();
                 return new Addition(firstInput, secondInput);
             case 2:
-                out.println(messageTemplateFirst);
-                firstInput = Input.getDouble();
-                out.println(messageTemplateSecond);
-                secondInput = Input.getDouble();
+                initialize();
                 return new Subtraction(firstInput, secondInput);
             case 3:
-                out.println(messageTemplateFirst);
-                firstInput = Input.getDouble();
-                out.println(messageTemplateSecond);
-                secondInput = Input.getDouble();
+                initialize();
                 return new Multiplication(firstInput, secondInput);
             case 4:
-                out.println(messageTemplateFirst);
-                firstInput = Input.getDouble();
-                out.println(messageTemplateSecond);
-                secondInput = Input.getDouble();
+                initialize();
                 return new Division(firstInput, secondInput);
             case 5:
-                out.println(messageTemplateFirst);
-                firstInput = Input.getDouble();
-                out.println(messageTemplateSecond);
-                secondInput = Input.getDouble();
+                initialize();
                 return new Power(firstInput, secondInput);
             case 0:
                 throw new StopApplicationException();
@@ -68,6 +54,12 @@ public class Calculator {
         }
     }
 
+    private void initialize() {
+        out.println(messageTemplateFirst);
+        firstInput = Input.getDouble();
+        out.println(messageTemplateSecond);
+        secondInput = Input.getDouble();
+    }
 
     private void showMenu() {
         out.println("What do you want to do?");
