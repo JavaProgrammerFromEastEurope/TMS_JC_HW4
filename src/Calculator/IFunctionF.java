@@ -1,6 +1,6 @@
 package Calculator;
 
-public interface FunctionF {
+public interface IFunctionF {
 
     double f();
 }

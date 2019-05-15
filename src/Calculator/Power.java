@@ -1,6 +1,6 @@
 package Calculator;
 
-public class Power extends OperationMethod implements FunctionF {
+public class Power extends OperationMethod implements IFunctionF {
 
 
     public Power(double firstOperand, double secondOperand) {

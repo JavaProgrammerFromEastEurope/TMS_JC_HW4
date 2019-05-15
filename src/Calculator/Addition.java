@@ -1,6 +1,6 @@
 package Calculator;
 
-public class Addition extends OperationMethod implements FunctionF {
+public class Addition extends OperationMethod implements IFunctionF {
 
 
     public Addition(double firstOperand, double secondOperand) {
