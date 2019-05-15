@@ -1,4 +1,6 @@
-package example.examples;
+package Car;
+
+import example.examples.Car;
 
 import static java.lang.System.out;
 
