@@ -1,57 +1,51 @@
 package ClassWork.Polymorphism.DrawFigures;
 
-import java.util.Scanner;
-
-import static java.lang.System.in;
 import static java.lang.System.out;
 
 public class Application {
 
-    private Scanner scanner = new Scanner(in);
-
     void start() {
-        out.println("Добро пожаловать!");
+        out.println("Welcome!");
         run();
-        out.println("Всего доброго!");
+        out.println("See you soon!");
     }
 
     private void run() {
         while (true) {
-            showMenu();
-            int number = scanner.nextInt();
-            if (number == 0) {
+            try {
+                Drawable drawable = getUserChoice();
+                drawable.draw();
+            } catch (StopApplicationException e) {
                 break;
             }
-            Drawable drawable = getUserChoice(number);
-            if (drawable == null) {
-                out.println("нет такой фигуры!");
-                continue;
-            }
-            drawable.draw();
         }
     }
 
-    private Drawable getUserChoice(int number) {
+    private Drawable getUserChoice() throws StopApplicationException {
+        showMenu();
+        int number = Input.getInt();
         switch (number) {
             case 1:
-                out.println("Введите сторону");
-                int a = scanner.nextInt();
+                out.println("Input square side");
+                int a =  Input.getInt();
                 return new Square(a);
             case 2:
                 return new Triangle();
             case 3:
                 return new Circle();
+            case 0:
+                throw new StopApplicationException();
             default:
-                return null;
-
+                out.println("The figure with current input is not exist!");
+                return getUserChoice();
         }
     }
 
     private void showMenu() {
         out.println("What do you want to pain?");
-        out.println("1- square");
+        out.println("1 - square");
         out.println("2 - triangle");
-        out.println("3- круг");
-        out.println("0- exit");
+        out.println("3 - circle");
+        out.println("0 - exit");
     }
 }
