@@ -24,14 +24,14 @@ public class Car {
         this.price = price;
     }
 
-    void start() throws StopApplicationException{
+    void start() throws StartException {
         Random random = new Random();
         int temp = 1 + random.nextInt(20);
         out.println(String.format("The random variable = %d",temp));
         if (!stateEngine) {
             if (temp % 2 == 0) {
                 out.println(String.format("%s engine break down!", mark));
-                throw new StopApplicationException();
+                throw new StartException();
             } else {
                 stateEngine = true;
                 out.println(String.format("%s engine has been started!", mark));

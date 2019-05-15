@@ -1,6 +1,6 @@
 package Car;
 
-public class StopApplicationException extends Exception {
+public class StartException extends Exception {
     @Override
     public String getMessage() {
         return "Exception confirmed!";

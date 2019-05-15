@@ -20,12 +20,12 @@ public class Main {
 
         try {
             firstCar.start();
-        } catch (StopApplicationException e) {
+        } catch (StartException e) {
             out.println(e.getMessage());
         }
         try {
             secondCar.start();
-        } catch (StopApplicationException e) {
+        } catch (StartException e) {
             out.println(e.getMessage());
         }
 
@@ -34,12 +34,12 @@ public class Main {
         thirdCar.description();
         try {
             thirdCar.start();
-        } catch (StopApplicationException e) {
+        } catch (StartException e) {
             out.println(e.getMessage());
         }
         try {
             thirdCar.start();
-        } catch (StopApplicationException e) {
+        } catch (StartException e) {
             out.println(e.getMessage());
         }
         thirdCar.stop();
