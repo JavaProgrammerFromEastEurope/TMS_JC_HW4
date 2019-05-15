@@ -63,7 +63,7 @@ public class Calculator {
             case 0:
                 throw new StopApplicationException();
             default:
-                out.println("The figure with current input is not exist!");
+                out.println("The operation with current input is not exist!");
                 return getUserChoice();
         }
     }
