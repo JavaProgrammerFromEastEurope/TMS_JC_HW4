@@ -1,7 +1,5 @@
 package Car;
 
-import example.examples.Car;
-
 import static java.lang.System.out;
 
 public class Main {
