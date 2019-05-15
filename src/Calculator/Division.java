@@ -1,7 +1,5 @@
 package Calculator;
 
-import static java.lang.System.*;
-
 public class Division extends OperationMethod implements IFunctionF {
 
     public Division(double firstOperand, double secondOperand) {
