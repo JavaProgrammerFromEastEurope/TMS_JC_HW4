@@ -1,47 +1,57 @@
 package example.examples;
 
+import java.util.Random;
+
 import static java.lang.System.out;
 
 public class Car {
 
-    private String marc;
+    private String mark;
     private int speed;
     private int price;
     private boolean stateEngine = false;
 
     Car() {
-        this.marc = "Lada";
+        this.mark = "Lada";
         this.speed = 90;
         this.price = 1500;
         this.stateEngine = false;
     }
 
     Car(String marc, int speed, int price) {
-        this.marc = marc;
+        this.mark = marc;
         this.speed = speed;
         this.price = price;
     }
 
-    void start() {
+    void start() throws StopApplicationException{
+        Random random = new Random();
+        int temp = 1 + random.nextInt(20);
+        out.println(String.format("The random variable = %d",temp));
         if (!stateEngine) {
-            stateEngine = true;
-            out.println(String.format("%s engine has been started!", marc));
+            if (temp % 2 == 0) {
+                out.println(String.format("%s engine break down!", mark));
+                throw new StopApplicationException();
+            } else {
+                stateEngine = true;
+                out.println(String.format("%s engine has been started!", mark));
+            }
         } else {
-            out.println(String.format("%s engine has been already started!", marc));
+            out.println(String.format("%s engine has been already started!", mark));
         }
     }
 
     void stop() {
         if (stateEngine) {
             stateEngine = false;
-            out.println(String.format("%s engine has been shut down!", marc));
+            out.println(String.format("%s engine has been shut down!", mark));
         } else {
-            out.println(String.format("%s engine has been already shut down!", marc));
+            out.println(String.format("%s engine has been already shut down!", mark));
         }
     }
 
-    public String getMarc() {
-        return marc;
+    public String getMark() {
+        return mark;
     }
 
     int getSpeed() {
@@ -52,8 +62,8 @@ public class Car {
         return price;
     }
 
-    void setMarc(String marc) {
-        this.marc = marc;
+    void setMark(String mark) {
+        this.mark = mark;
     }
 
     void setSpeed(int speed) {
@@ -73,6 +83,6 @@ public class Car {
     }
 
     public void description() {
-        out.println(String.format("Marc = %s, Speed = %d, Price = %d", marc, speed, price));
+        out.println(String.format("Marc = %s, Speed = %d, Price = %d", mark, speed, price));
     }
 }
