@@ -15,7 +15,7 @@ public class Main {
             store.addProduct(new Product(3, 564, "laptop"));
             store.addProduct(new Product(4, 745, "table"));
             store.addProduct(new Product(5, 649, "tv"));
-            store.addProduct(new Product(3, 564, "laptop"));
+            store.addProduct(new Product(3, 456, "laptop"));
         } catch (DuplicateItemException e) {
             e.printStackTrace();
         }

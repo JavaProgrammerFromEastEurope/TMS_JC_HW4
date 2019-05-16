@@ -24,12 +24,13 @@ public class Store {
         return productList;
     }
 
-    void addProduct(Product product) throws DuplicateItemException {
-        if (productList.contains(product)) {
-            throw new DuplicateItemException();
-        } else {
-            productList.add(product);
+    void addProduct(Product addProduct) throws DuplicateItemException {
+        for (Product product : productList) {
+            if (product.getId() == addProduct.getId()) {
+                throw new DuplicateItemException();
+            }
         }
+        productList.add(addProduct);
     }
 
     void setProduct(int id, Product setProduct) {
